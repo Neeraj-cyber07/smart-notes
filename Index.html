@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Notes</title>
+<link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+  <div class="app">
+    <h1>📚 Smart Notes</h1>
+    <button id="dark-mode-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <p id="notes-count">Total Notes: 0</p>
+    <p class="subtitle">Your notes, organized simply.</p>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search notes...">
+        <button>🔍</button>
+    </div>
+
+    <h2>Subjects</h2>
+
+    <div class="subjects">
+    <button onclick="filterBySubject('Economics')">📖 Economics</button>
+    <button onclick="filterBySubject('History')">📕 History</button>
+    <button onclick="filterBySubject('Mathematics')">📘 Mathematics</button>
+    <button onclick="filterBySubject('English')">📗 English</button>
+
+<div id="delete-subject-form" style="display:none;">
+    <select id="delete-subject-select">
+        <option value="">Select Subject</option>
+    </select>
+
+    <button onclick="confirmDeleteSubject()">Delete</button>
+    <button onclick="closeDeleteSubjectForm()">Cancel</button>
+</div>
+    <div id="subject-form" class="subject-form" style="display:none;">
+    <input type="text" id="new-subject" placeholder="Enter subject name">
+    <button onclick="saveSubject()">Add</button>
+  </div>
+    </div>
+    <div class="subject-actions">
+
+    <button onclick="showSubjectForm()">
+        ➕ Add Subject
+    </button>
+
+    <button onclick="showDeleteSubjectForm()">
+        🗑️ Delete Subject
+    </button>
+
+    </div>
+<button class="all-notes-btn" onclick="loadAllNotes()">
+    📋 All Notes
+</button>
+    <button class="add-note" onclick="showNoteForm()">＋ Add New Note</button>
+<div id="notes-list"></div>
+<div id="note-form" class="note-form">
+    <h2>Add New Note</h2>
+<select id="note-subject">
+    <option value="">Select Subject</option>
+    <option value="Economics">📖 Economics</option>
+    <option value="History">📕 History</option>
+    <option value="Mathematics">📘 Mathematics</option>
+    <option value="English">📗 English</option>
+</select>
+    <input type="text" id="note-title" placeholder="Note Title">
+
+    <textarea id="note-content" placeholder="Write your note..."></textarea>
+
+    <button onclick="saveNote()">Save Note</button>
+    <button onclick="closeNoteForm()">Cancel</button>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

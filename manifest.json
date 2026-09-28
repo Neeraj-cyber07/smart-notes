@@ -1,0 +1,10 @@
+{
+  "name": "Smart Notes",
+  "short_name": "Smart Notes",
+  "description": "A simple and smart notes app for students.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#222222",
+  "orientation": "portrait"
+}

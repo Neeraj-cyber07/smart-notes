@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+.app {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 25px 18px;
+}
+
+h1 {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.subtitle {
+    color: #666;
+    margin-top: 0;
+}
+
+.search-box {
+    display: flex;
+    margin: 25px 0;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    font-size: 16px;
+}
+
+.search-box button {
+    width: 55px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 25px;
+}
+
+.subjects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.subjects button {
+    padding: 18px 10px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.add-note {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #222;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}.note-form {
+    display: none;
+    margin-top: 20px;
+    padding: 18px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.note-form input,
+.note-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.note-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.note-form button {
+    padding: 12px 18px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.note-card {
+    margin-top: 15px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.note-card small {
+    color: #666;
+    font-size: 13px;
+}
+
+.note-card h3 {
+    margin: 8px 0;
+}
+
+.note-card p {
+    margin: 8px 0 15px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.note-card button {
+    padding: 8px 12px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+#dark-mode-btn {
+    padding: 10px 14px;
+    margin: 10px 0 15px;
+    border: none;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+body.dark-mode {
+    background: #181818;
+    color: white;
+}
+
+body.dark-mode .subtitle {
+    color: #ccc;
+}
+
+body.dark-mode .search-box input {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+body.dark-mode .subjects button,
+body.dark-mode .note-form,
+body.dark-mode .note-card {
+    background: #242424;
+    color: white;
+}
+
+body.dark-mode .note-card small {
+    color: #bbb;
+}
+#notes-count {
+    font-size: 14px;
+    margin: 10px 0 15px;
+    font-weight: bold;
+}
+
+body.dark-mode #notes-count {
+    color: #ddd;
+}
+#notes-count {
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
+}
+.note-card.pinned {
+    border: 2px solid #f0b400;
+    transform: scale(1.01);
+}
+
+.note-card.pinned small {
+    font-weight: bold;
+}
+.note-date {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+}
+/* Add Subject Form */
+.subject-form {
+    margin-top: 12px;
+    padding: 12px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.subject-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.subject-form button {
+    padding: 10px 14px;
+    margin: 3px;
+}
+
+/* Note Subject Dropdown */
+.note-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+}
+
+/* Dark Mode */
+body.dark-mode .subject-form {
+    background: #242424;
+}
+
+body.dark-mode .subject-form input,
+body.dark-mode .note-form select {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+/* Subject section fix */
+.subjects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.subjects > button {
+    padding: 18px 10px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    color: #222;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* Add Subject form */
+.subject-form {
+    grid-column: 1 / -1;
+    padding: 12px;
+    background: white;
+    border-radius: 12px;
+}
+
+.subject-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.subject-form button {
+    padding: 10px 14px;
+    margin: 3px;
+}
+
+body.dark-mode .subjects > button {
+    background: #242424;
+    color: white;
+}
+
+body.dark-mode .subject-form {
+    background: #242424;
+}
+
+body.dark-mode .subject-form input {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+.subject-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.subject-actions button {
+    flex: 1;
+    padding: 13px 8px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #222;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.subject-actions button:active {
+    transform: scale(0.98);
+}
+
+/* All Notes Button */
+.all-notes-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #222;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+body.dark-mode .subject-actions button,
+body.dark-mode .all-notes-btn {
+    background: #242424;
+    color: white;
+}
